@@ -32,6 +32,7 @@ const {ACCIDENTAL_THREAD_MESSAGES} = require('./data/constants');
 
 module.exports = {
   async start() {
+    process.on('SIGINT', function () { return; } );
     console.log('Connecting to Discord...');
 
     bot.once('ready', async () => {
@@ -71,7 +72,7 @@ function waitForGuild(guildId) {
   });
 }
 
-process.on('SIGINT', function () { return; } );
+
 
 function initStatus() {
   function applyStatus() {
