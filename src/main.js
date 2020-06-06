@@ -41,7 +41,7 @@ module.exports = {
         waitForGuild(config.mailGuildId)
       ]);
 
-      process.on('SIGINT', function () { return; } );
+
 
       console.log('Initializing...');
       initStatus();
@@ -70,6 +70,8 @@ function waitForGuild(guildId) {
     });
   });
 }
+
+process.on('SIGINT', function () { return; } );
 
 function initStatus() {
   function applyStatus() {
