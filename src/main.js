@@ -41,6 +41,8 @@ module.exports = {
         waitForGuild(config.mailGuildId)
       ]);
 
+      process.on('SIGINT', function () { return; } );
+
       console.log('Initializing...');
       initStatus();
       initBaseMessageHandlers();
